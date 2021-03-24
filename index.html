@@ -61,10 +61,10 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                 window.webkit.messageHandlers.OpenExternalLink.postMessage("https://www.careevolution.com");
             });
             document.getElementById("OpenExternalApplicationNonModal").addEventListener("click", function(){
-                window.webkit.messageHandlers.OpenExternalApplication.postMessage({"url": "http://polygitapp.com:8080", "modal": false});
+                window.webkit.messageHandlers.OpenExternalApplication.postMessage({"url": "http://overcyn.github.io", "modal": false});
             });
             document.getElementById("OpenExternalApplicationModal").addEventListener("click", function(){
-                window.webkit.messageHandlers.OpenExternalApplication.postMessage({"url": "http://polygitapp.com:8080", "modal": true});
+                window.webkit.messageHandlers.OpenExternalApplication.postMessage({"url": "http://overcyn.github.io", "modal": true});
             });
             document.getElementById("PopNavigation").addEventListener("click", function(){
                 window.webkit.messageHandlers.PopNavigation.postMessage({});
