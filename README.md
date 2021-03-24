@@ -1,0 +1,1 @@
+> scp -r -i ~/.ssh/google_compute_engine static overcyn@34.121.46.78:/home/overcyn
