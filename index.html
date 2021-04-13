@@ -139,10 +139,10 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                 html += "<br>" + date.toString() + JSON.stringify(e);
                 document.getElementById("Event").innerHTML = html;
             };
-            window.setAppStatus = function(e) {
+            window.setAppStatus = function(e, f) {
                 let html = document.getElementById("Event").innerHTML;
                 let date = new Date();
-                html += "<br>" + date.toString() + "App Status:" + e;
+                html += "<br>" + date.toString() + "App Status: " + e + " " + f;
                 document.getElementById("Event").innerHTML = html;
             }
         </script>
