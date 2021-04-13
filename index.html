@@ -19,6 +19,7 @@
         <div id="ShowParticipantDashboardModal">ShowParticipantDashboard Modal</div>
         <div id="ShowParticipantWebVisualizationNonModal">ShowParticipantWebVisualization Non-modal</div>
         <div id="ShowParticipantWebVisualizationModal">ShowParticipantWebVisualization Modal</div>
+        <div id="CheckAppStatus">CheckAppStatus</div>
         <div id="GetDelegatedAccessToken">GetDelegatedAccessToken</div>
         <div id="GetDeviceInfo">GetDeviceInfo</div>
         <div id="DeleteProviderAccount">DeleteProviderAccount</div>
@@ -96,6 +97,9 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
             document.getElementById("ShowParticipantWebVisualizationModal").addEventListener("click", function(){
                 window.webkit.messageHandlers.ShowParticipantWebVisualization.postMessage({"visualizationKey": "MyDataHelps.MyAccount", "parameters": "parameters", "modal": true, "title": "My Account"});
             });
+            document.getElementById("CheckAppStatus").addEventListener("click", function(){
+                window.webkit.messageHandlers.CheckAppStatus.postMessage("sms://555-555-5555");
+            });
             document.getElementById("GetDelegatedAccessToken").addEventListener("click", function(){
                 window.webkit.messageHandlers.GetDelegatedAccessToken.postMessage({"messageID": 222});
             });
@@ -135,6 +139,12 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                 html += "<br>" + date.toString() + JSON.stringify(e);
                 document.getElementById("Event").innerHTML = html;
             };
+            window.setAppStatus = function(e) {
+                let html = document.getElementById("Event").innerHTML;
+                let date = new Date();
+                html += "<br>" + date.toString() + "App Status:" + e;
+                document.getElementById("Event").innerHTML = html;
+            }
         </script>
     </body>
 </html>
